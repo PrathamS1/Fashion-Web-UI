@@ -1,4 +1,6 @@
-# Fashion Brand Landing Page UI
+# Fashion Website Landing Page UI
+
+## [Webpage Preview](https://fashion-web-ui.vercel.app/)
 
 A modern, visually striking landing page UI for a fashion brand, built with **React** and **Vite**. This project showcases creative layouts, smooth scroll-based animations (using **Framer Motion**), and a fully responsive design. It is intended as a front-end showcase for a fashion brand's online presence and is ready for deployment on **Vercel**.
 
