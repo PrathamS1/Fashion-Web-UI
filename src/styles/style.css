@@ -3,17 +3,18 @@
 }
 
 /* --- NAVBAR STYLES --- */
+.navbar-container{
+    position: sticky;
+    z-index: 10;
+    top: 0;
+}
 .navbar {
     display: flex;
     align-items: center;
     padding: 0.4rem;
     background-color: rgba(66, 6, 6, 0.6);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
+    position: relative;
 }
 
 .navbar-logo {
@@ -38,7 +39,7 @@
     gap: 2rem;
 }
 
-.navbar-links a {
+.navbar-links a, .mobile-only a {
     text-decoration: none;
     color: #d4d2d2;
     letter-spacing: 1px;
@@ -78,9 +79,6 @@
     line-height: 18px;
 }
 
-/* --- RESPONSIVE STYLES --- */
-
-/* Hide desktop nav elements on mobile */
 .desktop-only {
     display: flex;
 }
@@ -96,46 +94,49 @@
     cursor: pointer;
 }
 
-/* Mobile Collapsible Menu */
-.mobile-menu {
+.mobile-menu-expanded {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    background-color: rgba(66, 6, 6, 0.9);
-    padding: 1rem;
-    position: absolute;
-    left: 0;
+    /* gap: 1rem; */
+    background-color: rgba(66, 6, 6, 0.6);
+    padding: 1rem 0;
     width: 100%;
-    transform: translateY(-100%);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 9;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.08);
+    animation: dropdownMenu 0.25s ease;
+    z-index: 11;
+    position: static;
+}
+.mobile-menu-expanded a{
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+}
+.mobile-menu-expanded a:hover{
+    background-color: rgba(66, 6, 6, 0.8);
 }
 
-.mobile-menu.open {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
+@keyframes dropdownMenu {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.mobile-menu a {
-    color: #fff;
-    text-decoration: none;
-    font-family: 'Italiana', serif;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
+@media (min-width: 769px) {
+    .mobile-menu-expanded {
+        display: none !important;
+    }
 }
 
-.mobile-menu .mobile-cart {
+.mobile-menu-expanded .mobile-cart {
     position: relative;
     width: fit-content;
     color: #fff;
     cursor: pointer;
 }
 
-.mobile-menu .item-count {
+.mobile-menu-expanded .item-count {
     position: absolute;
     top: -8px;
     right: -10px;
