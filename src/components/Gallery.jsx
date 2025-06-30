@@ -1,5 +1,4 @@
 import "../styles/style.css";
-import { motion } from "framer-motion";
 import fashion1 from "../assets/fashion1.jpg";
 import fashion2 from "../assets/fashion2.jpg";
 import fashion3 from "../assets/fashion3.jpg";
@@ -21,41 +20,17 @@ function Gallery() {
       <div className="bento-gallery">
         <div className="column">
           {leftColumn.map((img, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.6, delay: 0.1 + i * 0.08 }}
-            >
-              <img src={img} alt={`Left ${i}`} className="bento-img" />
-            </motion.div>
+            <img key={i} src={img} alt={`Left ${i}`} className="bento-img" data-scroll data-scroll-class="is-inview" />
           ))}
         </div>
         <div className="column middle">
           {middleColumn.map((img, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.6, delay: 0.1 + i * 0.08 }}
-            >
-              <img src={img} alt={`Middle ${i}`} className="bento-img" />
-            </motion.div>
+            <img key={i} src={img} alt={`Middle ${i}`} className="bento-img" data-scroll data-scroll-class="is-inview" />
           ))}
         </div>
         <div className="column">
           {rightColumn.map((img, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.6, delay: 0.1 + i * 0.08 }}
-            >
-              <img src={img} alt={`Right ${i}`} className="bento-img" />
-            </motion.div>
+            <img key={i} src={img} alt={`Right ${i}`} className="bento-img" data-scroll data-scroll-class="is-inview" />
           ))}
         </div>
       </div>

@@ -415,8 +415,15 @@
     border-radius: 0.5rem;
     object-fit: cover;
     display: block;
-    transition: transform 0.3s ease;
+    transition: opacity 0.7s cubic-bezier(.77,0,.18,1), transform 0.7s cubic-bezier(.77,0,.18,1);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.bento-img.is-inview {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .bento-img:hover {
